@@ -51,7 +51,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vedalaya_app/views/learning/controller/recording_database.dart';
+import 'package:vedalaya_app/utils/recording_database.dart';
+import 'package:vedalaya_app/views/learning/model/recording_model.dart';
 import 'package:video_player/video_player.dart';
 
 class RecordingsScreen extends StatefulWidget {

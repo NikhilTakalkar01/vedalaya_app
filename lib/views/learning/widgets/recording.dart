@@ -2969,7 +2969,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vedalaya_app/core/themes/app_constants.dart';
-import 'package:vedalaya_app/views/learning/controller/recording_database.dart';
+import 'package:vedalaya_app/utils/recording_database.dart';
+import 'package:vedalaya_app/views/learning/model/recording_model.dart';
 
 import 'package:video_player/video_player.dart';
 
