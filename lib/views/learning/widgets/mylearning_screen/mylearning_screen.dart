@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vedalaya_app/views/learning/learning_screen2.dart';
+import 'package:vedalaya_app/views/learning/learning_screen.dart';
 
 class MylearningScreen extends StatefulWidget {
   const MylearningScreen({super.key});
@@ -128,93 +128,92 @@ class _MylearningScreenState extends State<MylearningScreen> {
     return Padding(
       padding: EdgeInsets.only(
         left: Get.width * 0.025,
-        right: Get.width * 0.04,
+        right: Get.width * 0.03,
         top: Get.width * 0.02,
         bottom: Get.width * 0.02,
       ),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            Container(
-              height: Get.height * 0.07,
-              width: Get.width * 0.25,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                  border: Border.all(color: Colors.black)),
-              child: Image.asset(
-                "assets/icons/hanumanji.png",
-                fit: BoxFit.cover,
+      child: Row(
+        children: [
+          Container(
+            height: Get.height * 0.07,
+            width: Get.width * 0.28,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(16)),
+                border: Border.all(color: Colors.black)),
+            child: Image.asset(
+              "assets/icons/hanumanji.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          SizedBox(
+            width: Get.width * 0.02,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Hanuman Chalisa",
+                style: GoogleFonts.poppins(
+                    color: Color.fromRGBO(30, 30, 30, 1),
+                    fontWeight: FontWeight.w600),
               ),
-            ),
-            SizedBox(
-              width: Get.width * 0.025,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Hanuman Chalisa",
-                  style: GoogleFonts.poppins(
-                      color: Color.fromRGBO(30, 30, 30, 1),
-                      fontWeight: FontWeight.w600),
-                ),
-                Text(
-                  "(2/9 Lessons Completed)",
-                  style: GoogleFonts.poppins(
-                      fontSize: 12,
-                      color: Color.fromRGBO(30, 30, 30, 0.5),
-                      fontWeight: FontWeight.w400),
-                ),
-              ],
-            ),
-            SizedBox(
-              width: Get.width * 0.05,
-            ),
-            SizedBox(
-              height: Get.height * 0.038,
-              width: Get.width * 0.25,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    // padding: EdgeInsets.only(left: 20, right: 20),
+              Text(
+                "(2/9 Lessons Completed)",
+                style: GoogleFonts.poppins(
+                    fontSize: 12,
+                    color: Color.fromRGBO(30, 30, 30, 0.5),
+                    fontWeight: FontWeight.w400),
+              ),
+            ],
+          ),
+          SizedBox(
+            width: Get.width * 0.03,
+          ),
+          SizedBox(
+            height: Get.height * 0.036,
+            width: Get.width * 0.24,
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  // padding: EdgeInsets.only(left: 20, right: 20),
 
-                    backgroundColor: (index == 0 || index == 1)
-                        ? Color.fromRGBO(213, 213, 213, 0.35)
-                        : Color.fromRGBO(74, 0, 179, 1),
-                    // backgroundColor: AppConstants.purpleColor,
-                    shadowColor: (index == 0 || index == 1)
-                        ? Color.fromRGBO(74, 0, 179, 1)
-                        : null,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18),
-                    ),
+                  backgroundColor: (index == 0 || index == 1)
+                      ? Color.fromRGBO(213, 213, 213, 0.35)
+                      : Color.fromRGBO(74, 0, 179, 1),
+                  // backgroundColor: AppConstants.purpleColor,
+                  shadowColor: (index == 0 || index == 1)
+                      ? Color.fromRGBO(74, 0, 179, 1)
+                      : null,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18),
                   ),
-                  onPressed: () {
-                    (index == 0 || index == 1)
-                        ? Get.to(LearningScreen())
-                        : ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text('Please Complete Above lessons',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w500)),
-                              duration: Duration(seconds: 2),
-                              backgroundColor: Colors.red[400],
-                            ),
-                          );
+                ),
+                onPressed: () {
+                  (index == 0 || index == 1)
+                      ? Get.to(LearningScreen())
+                      : ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Please Complete Above lessons',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500)),
+                            duration: Duration(seconds: 2),
+                            backgroundColor: Colors.red[400],
+                          ),
+                        );
 
-                    setState(() {});
-                  },
-                  child: Center(
-                    child: Text(
-                      (index == 0 || index == 1) ? "Resume" : "Start",
-                      style: GoogleFonts.poppins(
-                          color: Colors.white, fontWeight: FontWeight.w600),
-                    ),
-                  )),
-            )
-          ],
-        ),
+                  setState(() {});
+                },
+                child: Center(
+                  child: Text(
+                    (index == 0 || index == 1) ? "Resume" : "Start",
+                    style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12),
+                  ),
+                )),
+          )
+        ],
       ),
     );
   }
